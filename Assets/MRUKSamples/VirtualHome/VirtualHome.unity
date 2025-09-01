@@ -1541,7 +1541,7 @@ MonoBehaviour:
   - WallU: 3
     WallV: 2
     AnchorUV: 0
-  Labels: 4
+  Labels: 294916
 --- !u!4 &1195616157
 Transform:
   m_ObjectHideFlags: 0
@@ -2275,6 +2275,9 @@ MonoBehaviour:
   passthroughLayerResumed:
     m_PersistentCalls:
       m_Calls: []
+  overrideBlendFactors: 0
+  srcBlendFactor: 0
+  dstBlendFactor: 0
   colorMapEditorType_: 0
   colorMapEditorGradient:
     serializedVersion: 2

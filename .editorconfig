@@ -61,6 +61,44 @@ csharp_prefer_braces = true:warning
 csharp_preserve_single_line_blocks = false
 csharp_preserve_single_line_statements = false
 
+# Symbol naming
+## styles:
+dotnet_naming_style.camel_case.capitalization = camel_case
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+dotnet_naming_style.underscore_camel_case.capitalization = camel_case
+dotnet_naming_style.underscore_camel_case.required_prefix = _
+dotnet_naming_style.s_underscore_camel_case.capitalization = camel_case
+dotnet_naming_style.s_underscore_camel_case.required_prefix = s_
+
+## public type names, namespaces:
+dotnet_naming_symbols.public_types_namespaces.applicable_kinds = class, struct, enum, delegate, namespace
+dotnet_naming_symbols.public_types_namespaces.applicable_accessibilities = public, internal, protected, protected_internal
+dotnet_naming_rule.public_types_namespaces.severity = warning
+dotnet_naming_rule.public_types_namespaces.symbols = public_types_namespaces
+dotnet_naming_rule.public_types_namespaces.style = pascal_case
+
+## private instance fields:
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private, protected, private_protected
+dotnet_naming_rule.private_instance_fields.severity = warning
+dotnet_naming_rule.private_instance_fields.symbols = private_fields
+dotnet_naming_rule.private_instance_fields.style = underscore_camel_case
+
+## private static fields:
+dotnet_naming_symbols.static_private_fields.applicable_kinds = field
+dotnet_naming_symbols.static_private_fields.applicable_accessibilities = private, protected, private_protected
+dotnet_naming_symbols.static_private_fields.required_modifiers = static
+dotnet_naming_rule.private_static_fields.severity = warning
+dotnet_naming_rule.private_static_fields.symbols = static_private_fields
+dotnet_naming_rule.private_static_fields.style = s_underscore_camel_case
+
+## local functions:
+dotnet_naming_symbols.local_funcs.applicable_kinds = local_function
+dotnet_naming_rule.local_funcs.severity = warning
+dotnet_naming_rule.local_funcs.symbols = local_funcs
+dotnet_naming_rule.local_funcs.style = camel_case
+
+# etc:
 dotnet_analyzer_diagnostic.severity = none
 dotnet_diagnostic.OVR013.severity = warning
 

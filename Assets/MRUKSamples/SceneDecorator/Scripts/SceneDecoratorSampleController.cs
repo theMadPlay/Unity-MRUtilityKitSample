@@ -246,11 +246,13 @@ namespace Meta.XR.MRUtilityKitSamples.SceneDecoratorSample
 
         public async void RequestSpaceSetupManual()
         {
-            await OVRScene.RequestSpaceSetup();
-            await MRUK.Instance.LoadSceneFromDevice(false);
-            SpaceMapGPU.StartSpaceMap(MRUK.RoomFilter.CurrentRoomOnly);
-            ClearDecorations();
-            currentDecoration = DecorationStyle.None;
+            if (await OVRScene.RequestSpaceSetup())
+            {
+                await MRUK.Instance.LoadSceneFromDevice(false);
+                SpaceMapGPU.StartSpaceMap(MRUK.RoomFilter.CurrentRoomOnly);
+                ClearDecorations();
+                currentDecoration = DecorationStyle.None;
+            }
         }
     }
 }

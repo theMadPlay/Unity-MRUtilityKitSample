@@ -19,29 +19,29 @@
  */
 
 using Meta.XR.Samples;
-using TMPro;
 using UnityEngine;
 
-namespace Meta.XR.MRUtilityKitSamples.PassthroughRelighting
+namespace Meta.XR.MRUtilityKitSamples.QRCodeDetection
 {
-    [MetaCodeSample("MRUKSample-PassthroughRelighting")]
-    [RequireComponent(typeof(TextMeshProUGUI))]
-    public class SelectableText : MonoBehaviour
+    [MetaCodeSample("MRUKSample-QRCodeDetection")]
+    [RequireComponent(typeof(Canvas))]
+    public class QRCodeFaceCamera : MonoBehaviour
     {
-        [SerializeField] private bool SelectedOnToggleOn;
-        private TextMeshProUGUI selectedText;
-        private Color selectedColor = Color.white;
-        private Color deselectedColor = new Color(0.3f, 0.3f, 0.3f);
+        Canvas _canvas;
 
-        void Awake()
+        void Start()
         {
-            selectedText = GetComponent<TextMeshProUGUI>();
+            _canvas = GetComponent<Canvas>();
+            _canvas.worldCamera = Camera.main;
         }
 
-        public void SetSelected(bool selected)
+        void Update()
         {
-            selectedText.color = selected == SelectedOnToggleOn ? selectedColor
-                                                                : deselectedColor;
+            if (_canvas && _canvas.worldCamera)
+            {
+                transform.rotation =
+                    Quaternion.LookRotation(transform.position - _canvas.worldCamera.transform.position);
+            }
         }
     }
 }

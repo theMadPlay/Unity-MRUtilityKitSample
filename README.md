@@ -29,6 +29,7 @@ More information on MR Utility Kit can be found on our [developer website](https
 - [Space Map](./Assets/MRUKSamples/SpaceMap): A scene with the SpaceMap prefab added. It creates a texture which represents the room with a color gradient according to the settings of the prefab.
 - [Keyboard Tracking](./Assets/MRUKSamples/KeyboardTracker): A scene demonstrating generic keyboard detection and tracking.
 - [Bouncing Ball](./Assets/MRUKSamples/BouncingBall): A scene showing virtual balls interacting with the physical environment.
+- [QR Code Detection](./Assets/MRUKSamples/QRCodeDetection): A scene demonstrating QR code detection.
 
 More information on all samples can be found on our [developer website](https://developers.meta.com/horizon/documentation/unity/unity-mr-utility-kit-samples).
 
